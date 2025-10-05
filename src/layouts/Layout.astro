@@ -1,0 +1,64 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Certificate from "../components/Certificate.astro";
+import SideBar from "../components/SideBar.astro";
+import Technologies from "../components/Technologies.astro";
+import Konsole from "../components/Konsole.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body
+    class="absolute top-0 z-[-2] h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+  >
+    <div class="mb-10">
+      <Header />
+    </div>
+
+    <div class="mb-10 md:flex md:justify-end">
+      <div class="bg-sky-500/10 rounded-2xl m-2 p-2 md:m-8 md:w-[75vw] sm:p-3">
+        <h2 class="text-white font-bold pb-3 text-[20px] md:text-[23px]">
+          Projects <span><i class="fas fa-star"></i></span>
+        </h2>
+        <Project />
+      </div>
+    </div>
+
+    <div
+      class="bg-sky-500/10 rounded-2xl m-2 mb-10 p-2 md:m-8 md:w-[75vw] sm:p-3"
+    >
+      <h2 class="text-white font-bold pb-3 text-[20px] md:text-[23px]">
+        Certificates <span><i class="fa-solid fa-certificate"></i> </span>
+      </h2>
+      <Certificate />
+    </div>
+
+    <SideBar />
+
+    <div class="mb-10">
+      <h2 class="text-white font-bold text-[20px] mx-2 md:mx-8 md:text-[23px]">
+        My technologies and tools <span><i class="fa-solid fa-wrench"></i></span
+        >
+      </h2>
+      <Technologies />
+    </div>
+
+    <div class="">
+      <Konsole />
+    </div>
+
+    <Footer />
+
+    <slot />
+  </body>
+</html>
