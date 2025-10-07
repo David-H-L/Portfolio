@@ -1,0 +1,22 @@
+---
+const { nameTech, fullName } = Astro.props;
+---
+
+<div
+  class="group bg-sky-500/10 border-1 border-white flex flex-col items-center justify-evenly rounded-[15px] min-w-32 h-32"
+>
+  <div class="relative">
+    <span class="absolute -inset-0.5 bg-sky-500 rounded-lg blur"></span>
+    <div
+      class="group-hover:scale-110 transition-transform relative bg-[#181818] rounded-[10px] p-2"
+    >
+      <svg width="35" height="35">
+        <use xlink:href={`/tech.svg#${nameTech}`}></use>
+      </svg>
+    </div>
+  </div>
+  <div class="relative">
+    <span class="absolute inset-0.5 bg-sky-500 blur"></span>
+    <span class="text-white relative">{fullName}</span>
+  </div>
+</div>
