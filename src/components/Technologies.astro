@@ -1,0 +1,28 @@
+---
+import { technologies } from "./data/Tech";
+import CardTech from "./cards/CardTech.astro";
+---
+
+<section id="tech" class="overflow-hidden p-2 mx-2 md:mx-8 scroll-mt-[30vh]">
+  <div class="movement flex gap-4">
+    {
+      [...technologies, ...technologies].map((tech) => (
+        <CardTech nameTech={tech.name} fullName={tech.fullName} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .movement {
+    animation: animate 13s linear infinite;
+  }
+  .movement:hover {
+    animation-play-state: paused;
+  }
+  @keyframes animate {
+    to {
+      translate: calc(-5.629 * 16rem);
+    }
+  }
+</style>
