@@ -1,0 +1,23 @@
+---
+import CardAchievement from "./cards/CartAchievement.astro";
+import { projects } from "./data/Projects";
+---
+
+<div
+  id="projects"
+  class="grid grid-cols-2 gap-3 md:grid-cols-3 scroll-mt-[25vh]"
+>
+  {
+    projects.map((project) => (
+      <CardAchievement
+        name={project.name}
+        linkGithub={project.linkGithub}
+        linkDeploy={project.linkDeploy}
+        img={project.img}
+        deploy={project.deploy}
+        date={project.date}
+        type={project.type}
+      />
+    ))
+  }
+</div>
