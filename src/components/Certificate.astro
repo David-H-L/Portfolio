@@ -1,0 +1,23 @@
+---
+import CartAchievement from "./cards/CardAchievement.astro";
+import { certificate } from "./data/Certificate";
+---
+
+<div
+  id="certificate"
+  class="grid grid-cols-2 md:grid-cols-3 gap-3 scroll-mt-[25vh]"
+>
+  {
+    certificate.map((item) => (
+      <CartAchievement
+        name={item.name}
+        linkGithub=""
+        linkDeploy={item.linkDeploy}
+        img={item.img}
+        deploy={item.deploy}
+        date={item.date}
+        type={item.type}
+      />
+    ))
+  }
+</div>
