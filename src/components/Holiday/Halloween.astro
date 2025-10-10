@@ -1,0 +1,306 @@
+---
+
+---
+
+<section class="home">
+  <div class="home__container">
+    <img src="/img/home-point.png" alt="" class="home__points" />
+    <img src="/img/home-shadow.png" alt="" class="home__shadow" />
+    <img src="/img/home-moon.png" alt="" class="home__moon" />
+    <img src="/img/home-trees.png" alt="" class="home__tree" />
+    <img src="/img/home-pumpkin.png" alt="" class="home__pumpkin" />
+    <img src="/img/home-stones.png" alt="" class="home__stone" />
+    <img src="/img/home-grass.png" alt="" class="home__grass" />
+    <div class="home__titles">
+      <h1 class="home__title">HALLOWEEN</h1>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Montserrat:wght@400;500&display=swap");
+
+  :root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+
+    --first-color: hsl(185, 100%, 48%);
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(222, 100%, 2%);
+    --radial-color: radial-gradient(
+      52% 52% at 50% 50%,
+      hsl(202, 90%, 38%) 0%,
+      hsl(222, 100%, 6%) 100%
+    );
+
+    /*========== Font and typography ==========*/
+
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Jolly Lodger", cursive;
+    --biggest-font-size: 3rem;
+    --big-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+
+    --font-regular: 400;
+    --font-medium: 500;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+
+  @media screen and (min-width: 1150px) {
+    :root {
+      --biggest-font-size: 9rem;
+      --big-font-size: 3.5rem;
+      --h2-font-size: 1.5rem;
+      --normal-font-size: 1rem;
+      --small-font-size: 0.875rem;
+    }
+  }
+
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--black-color);
+    color: var(--white-color);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+  }
+
+  .main {
+    overflow: hidden;
+  }
+
+  /*=============== HOME ===============*/
+  .home {
+    position: relative;
+    height: 100vh;
+    background-color: var(--black-color);
+  }
+
+  .home__container {
+    position: relative;
+    height: 70%;
+    background: var(--radial-color);
+    display: grid;
+    justify-items: center;
+    overflow: hidden;
+  }
+  .home__container img {
+    position: absolute;
+  }
+
+  .home__grass,
+  .home__pumpkin {
+    bottom: 0;
+  }
+
+  .home__stone {
+    bottom: -0.5rem;
+    width: 470px;
+  }
+
+  .home__tree {
+    bottom: -0.5rem;
+    width: 470px;
+  }
+
+  .home__moon {
+    bottom: 2rem;
+    width: 598px;
+  }
+
+  .home__stone,
+  .home__tree,
+  .home__moon {
+    max-width: initial;
+  }
+
+  .home__shadow,
+  .home__points {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .home__shadow {
+    mix-blend-mode: overlay;
+  }
+
+  .home__titles {
+    position: absolute;
+    bottom: 11rem;
+    text-align: center;
+  }
+
+  .home__subtitle,
+  .home__title {
+    color: var(--black-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-regular);
+    text-shadow: 0 2px 8px var(--first-color);
+  }
+
+  .home__subtitle {
+    font-size: var(--big-font-size);
+  }
+
+  .home__title {
+    font-size: var(--biggest-font-size);
+  }
+
+  .home__data {
+    position: absolute;
+    bottom: 4rem;
+    text-align: center;
+    margin-inline: 1.5rem;
+  }
+
+  @media screen and (max-width: 330px) {
+    .container {
+      margin-inline: 1rem;
+    }
+
+    .home__stone {
+      width: 370px;
+    }
+
+    .home__tree {
+      width: 400px;
+    }
+
+    .home__moon {
+      width: 520px;
+    }
+
+    .home__titles {
+      bottom: 9rem;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .home__container {
+      height: 85%;
+    }
+
+    .home__grass,
+    .home__stone,
+    .home__tree,
+    .home__moon {
+      width: 100%;
+    }
+
+    .home__moon {
+      bottom: 13rem;
+    }
+
+    .home__title {
+      bottom: 13rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .home__container {
+      height: 110%;
+    }
+
+    .home__titles {
+      bottom: 16rem;
+    }
+    .home__subtitle {
+      font-size: 2.5rem;
+    }
+
+    .home__title {
+      font-size: 4.5rem;
+    }
+  }
+
+  @media screen and (min-width: 968px) {
+    .home__container {
+      height: 110%;
+    }
+
+    .home__moon {
+      bottom: 0;
+    }
+
+    .home_titles {
+      bottom: 20rem;
+    }
+
+    @media screen and (min-width: 1150px) {
+      .home__container {
+        height: 120%;
+      }
+
+      .home__titles {
+        bottom: 25rem;
+      }
+    }
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  gsap.from(".home__shadow", 1.5, { opacity: 0, y: -300, delay: 0.2 });
+  gsap.from(".home__points", 1.5, { opacity: 0, y: -300, delay: 0.4 });
+  gsap.from(".home__grass", 1.5, {
+    opacity: 0,
+    y: 300,
+    delay: 0.2,
+    ease: "elastic.out(1, .5)",
+  });
+  gsap.from(".home__pumpkin", 1.5, {
+    opacity: 0,
+    y: -300,
+    delay: 0.6,
+    ease: "bounce.out",
+  });
+  gsap.from(".home__stone", 1.5, {
+    opacity: 0,
+    y: 300,
+    delay: 0.8,
+    ease: "elastic.out(1, .5)",
+  });
+  gsap.from(".home__moon", 1.5, {
+    opacity: 0,
+    y: 300,
+    delay: 1.5,
+    ease: "elastic.out(1, .5)",
+  });
+  gsap.from(".home__titles", 1.5, {
+    opacity: 0,
+    y: -300,
+    delay: 1.5,
+    ease: "elastic.out(1, .5)",
+  });
+  gsap.from(".home__tree", 1.5, {
+    opacity: 0,
+    y: 300,
+    delay: 2,
+    ease: "elastic.out(1, .5)",
+  });
+</script>

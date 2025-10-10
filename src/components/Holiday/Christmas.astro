@@ -1,0 +1,85 @@
+---
+
+---
+
+<style>
+  :global(#snow-container) {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  :global(#snow-container .snowflake) {
+    position: absolute;
+    top: -5%;
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+    will-change: transform, opacity;
+    animation-name: fall;
+    animation-timing-function: linear;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateX(0) translateY(-10vh) rotate(0deg);
+    }
+    50% {
+      transform: translateX(20px) translateY(50vh) rotate(180deg);
+    }
+    100% {
+      transform: translateX(-20px) translateY(110vh) rotate(360deg);
+      opacity: 0.5;
+    }
+  }
+</style>
+
+<div id="snow-container" aria-hidden="true"></div>
+
+<script>
+  (() => {
+    const TOTAL_SNOWFLAKES = 15;
+    let container = document.getElementById("snow-container");
+
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "snow-container";
+      container.style.pointerEvents = "none";
+      document.body.appendChild(container);
+    }
+
+    function createSnowflake() {
+      const snowflake = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "svg"
+      );
+      snowflake.setAttribute("class", "snowflake");
+      snowflake.setAttribute("width", "20");
+      snowflake.setAttribute("height", "20");
+      snowflake.setAttribute("viewBox", "0 0 24 24");
+
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
+      snowflake.style.animationDelay = Math.random() * 5 + "s";
+
+      snowflake.innerHTML = `<path fill="white" d="M12 2L13 8H17L14 10L15 16L12 14L9 16L10 10L7 8H11L12 2Z"/>`;
+
+      if (container) {
+        container.appendChild(snowflake);
+      }
+
+      snowflake.addEventListener("animationend", () => {
+        snowflake.remove();
+        setTimeout(createSnowflake, Math.random() * 1000);
+      });
+    }
+
+    for (let i = 0; i < TOTAL_SNOWFLAKES; i++) {
+      setTimeout(createSnowflake, i * 200);
+    }
+  })();
+</script>
