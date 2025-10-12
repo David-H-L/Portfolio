@@ -11,7 +11,6 @@ import Christmas from "../components/Holiday/Christmas.astro";
 import Halloween from "../components/Holiday/Halloween.astro";
 import { currentHoliday } from "../components/data/CurrentHoliday";
 import { cardColor } from "../components/data/CardColor";
-console.log(currentHoliday());
 ---
 
 <!doctype html>
@@ -31,6 +30,14 @@ console.log(currentHoliday());
     <div class="mb-10">
       <Header />
     </div>
+
+    {
+      currentHoliday() === "octubre" && (
+        <audio autoplay loop>
+          <source src="/music/halloween.mp3" type="audio/mpeg" />
+        </audio>
+      )
+    }
     <div class="mb-10 md:flex md:justify-end">
       <div class=`${cardColor()} rounded-2xl m-2 p-2 md:m-8 md:w-[75vw] sm:p-3`>
         <h2 class="text-white font-bold pb-3 text-[20px] md:text-[23px]">
@@ -74,10 +81,6 @@ console.log(currentHoliday());
         </section>
       )
     }
-
-    <audio autoplay loop>
-      <source src="/music/halloween.mp3" type="audio/mpeg" />
-    </audio>
 
     <slot />
   </body>
