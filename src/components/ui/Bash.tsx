@@ -23,7 +23,7 @@ export function Bash() {
                     break;
                 case "play music":
                     if(audioRef.current){
-                        audioRef.current.volume = 0.3;
+                        audioRef.current.volume = 0.4;
                         audioRef.current.play();
                     }
                     setCommand([...command, {text: value, found: true}])
@@ -90,7 +90,7 @@ export function Bash() {
                 <input type="text" ref={inputRef} onKeyDown={addCommand} className="flex-1 outline-none font-light text-white text-[14px]" />
             </div>
 
-            {currentHoliday() === 'octubre' || currentHoliday() === 'diciembre' && (
+            {(currentHoliday() === 'octubre' || currentHoliday() === 'diciembre') && (
                 <audio ref={audioRef} loop preload="auto">
                     <source src={ambientMusic()} type="audio/mpeg" />
                 </audio>
