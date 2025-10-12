@@ -11,7 +11,7 @@ import { certificate } from "./data/Certificate";
     certificate.map((item) => (
       <CartAchievement
         name={item.name}
-        linkGithub=""
+        linkGithub={item.linkDeploy}
         linkDeploy={item.linkDeploy}
         img={item.img}
         deploy={item.deploy}
