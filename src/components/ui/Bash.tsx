@@ -68,6 +68,8 @@ export function Bash() {
                 <span className="text-white">$</span>
                 <input type="text" ref={inputRef} onKeyDown={addCommand} className="flex-1 outline-none font-light text-white text-[14px]" />
             </div>
+            
         </div>
+        
     )
 }
