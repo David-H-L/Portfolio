@@ -1,17 +1,29 @@
+---
+
+---
+
 <div class="group col-span-4 m-auto relative">
   <img
     src="/img/bandera.webp"
     alt="adorno"
-    class="absolute w-7 bottom-0 right-0 rounded-[4px] md:right-[2vw] md:bottom-[1vw] lg:bottom-[1vw] z-10"
+    class="absolute w-7 bottom-0 right-0 rounded-[4px] md:right-[2vw] md:bottom-[1vw] lg:bottom-[1vw] z-20"
+    draggable="false"
   />
   <img
     src="/img/Profile.jpg"
     alt="David"
-    class="opacity-100 absolute group-hover:opacity-0 size-25 rounded-full md:size-[22vw] lg:md:size-56"
-  />
-  <img
-    src="/img/Profile2.webp"
-    alt="David"
-    class="opacity-0 group-hover:opacity-100 size-25 rounded-full md:size-[22vw] lg:md:size-56"
+    class="size-25 rounded-full md:size-[22vw] lg:md:size-56 z-10"
+    draggable="false"
+    id="profile"
   />
 </div>
+
+<script>
+  const img = document.getElementById("profile");
+  img.addEventListener("mouseenter", () => {
+    img.src = "/img/Profile2.webp";
+  });
+  img.addEventListener("mouseleave", () => {
+    img.src = "/img/Profile.jpg";
+  });
+</script>

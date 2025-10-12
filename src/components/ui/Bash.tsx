@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect} from "react";
+import { ambientMusic, currentHoliday } from '../../data/CurrentHoliday'
 
 type Command = {
     text: string
@@ -9,22 +10,42 @@ export function Bash() {
     const [command, setCommand ] = useState<Command[]>([{text:'growing every day',found:true},{text:'davidhuancaledezma@gmail.com',found:true}]);
     const containerRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const addCommand = (e:React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === "Enter"){
             let input = e.target as HTMLInputElement
             let value = input.value
-            if(value === "clear"){
-                setCommand([])
-            }else {
-                if(value !== ""){
-              
-                    setCommand([...command,{text: value, found:true}, {text: `bash: ${value}: command not found`, found:false}])
-                }else {
-         
+
+            switch (value) {
+                case "clear":
+                    setCommand([]);
+                    break;
+                case "play music":
+                    if(audioRef.current){
+                        audioRef.current.volume = 0.3;
+                        audioRef.current.play();
+                    }
                     setCommand([...command, {text: value, found: true}])
-                }
-                
+                    break;
+                case "stop music":
+                    audioRef.current?.pause();
+                    setCommand([...command, {text: value, found: true}])
+                    break;
+                case "help":
+                    ambientMusic()? setCommand([...command,{text: value, found:true}, {text: '- clear', found:false}, {text: '- play music', found:false}, {text: '- stop music', found:false}]) 
+                    : setCommand([...command,{text: value, found:true}, {text: '- clear', found:false}]) 
+                    
+                    break;
+                default:
+                    if(value !== ""){
+              
+                        setCommand([...command,{text: value, found:true}, {text: `bash: ${value}: command not found`, found:false}])
+                    }else {
+            
+                        setCommand([...command, {text: value, found: true}])
+                    }
+                    break;
             }
             input.value = ""
         }
@@ -68,6 +89,13 @@ export function Bash() {
                 <span className="text-white">$</span>
                 <input type="text" ref={inputRef} onKeyDown={addCommand} className="flex-1 outline-none font-light text-white text-[14px]" />
             </div>
+
+            {currentHoliday() === 'octubre' || currentHoliday() === 'diciembre' && (
+                <audio ref={audioRef} loop preload="auto">
+                    <source src={ambientMusic()} type="audio/mpeg" />
+                </audio>
+            )}
+            
             
         </div>
         

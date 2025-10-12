@@ -10,7 +10,7 @@ interface Project {
 }
 const { name, linkGithub, linkDeploy, img, deploy, date, type } =
   Astro.props as Project;
-import { currentHoliday } from "../data/CurrentHoliday";
+import { currentHoliday } from "../../data/CurrentHoliday";
 ---
 
 <article
@@ -26,8 +26,16 @@ import { currentHoliday } from "../data/CurrentHoliday";
 
   {
     currentHoliday() === "octubre" && (
-      <div class="absolute -top-1 h-10 w-10 z-10">
-        <img src="/img/fantasma.png" alt="" />
+      <div class="absolute -top-1 left-1 h-10 w-10 z-10">
+        <img src="/img/tumba.webp" alt="tumba" draggable="false" />
+      </div>
+    )
+  }
+
+  {
+    currentHoliday() === "diciembre" && (
+      <div class="absolute left-1 h-8 w-8 z-10">
+        <img src="/img/gift.webp" alt="gift" draggable="false" />
       </div>
     )
   }
@@ -58,6 +66,11 @@ import { currentHoliday } from "../data/CurrentHoliday";
   </section>
 
   <main class="group-hover:scale-110 transition-transform duration-400">
-    <img src={img} alt="image project" class="h-40 w-full object-cover" />
+    <img
+      src={img}
+      alt="image project"
+      class="h-40 w-full object-cover"
+      draggable="false"
+    />
   </main>
 </article>
