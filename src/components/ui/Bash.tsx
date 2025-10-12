@@ -6,7 +6,7 @@ type Command = {
 }
 
 export function Bash() {
-    const [command, setCommand ] = useState<Command[]>([{text:'sudo growing every day',found:true},{text:'sudo davidhuancaledezma@gmail.com',found:true}]);
+    const [command, setCommand ] = useState<Command[]>([{text:'growing every day',found:true},{text:'davidhuancaledezma@gmail.com',found:true}]);
     const containerRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -46,7 +46,7 @@ export function Bash() {
             
             {command && (
                 command.map((item, i) => (
-                <div key={i} className="flex font-bold text-[14px] gap-0.5 mx-1 overflow-hidden" > 
+                <div key={i} className="flex font-bold text-[13px] sm:text-[14px] gap-0.5 mx-1 overflow-hidden" > 
                     {item.found && (
                         <>
                             <p className="text-green-400">david@david</p>
@@ -55,13 +55,13 @@ export function Bash() {
                             <span className="text-white">$</span>
                         </>
                     )}
-                    <p className="text-white text-[14px] font-light">{item.text}</p>
+                    <p className="text-white text-[13px] sm:text-[14px] font-light">{item.text}</p>
                 </div>
                 ))
                 
             )}
          
-            <div className="flex font-bold text-[14px] gap-0.5 mx-1 overflow-hidden" >
+            <div className="flex font-bold text-[13px] sm:text-[14px] gap-0.5 mx-1 overflow-hidden" >
                 <p className="text-green-400">david@david</p>
                 <span className="text-white">:</span>
                 <span className="text-blue-500">~</span>
