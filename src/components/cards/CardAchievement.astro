@@ -14,7 +14,7 @@ import { currentHoliday } from "../../data/CurrentHoliday";
 ---
 
 <article
-  class="group h-40 mt-1 mb-1 hover:border-b-1 duration-150 border-white bg-sky-500/10 relative overflow-hidden rounded-t-xl"
+  class="card-achievement group h-40 mt-1 mb-1 hover:border-b-1 duration-150 border-white bg-sky-500/10 relative overflow-hidden rounded-t-xl"
 >
   {deploy && <a href={linkDeploy} class="absolute inset-0 z-10" />}
 
@@ -42,7 +42,7 @@ import { currentHoliday } from "../../data/CurrentHoliday";
 
   {
     !deploy && (
-      <div class="absolute opacity-0 group-hover:opacity-100 bg-black/90 px-2 rounded-2xl top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-white z-10">
+      <div class="deploy-container absolute opacity-0 bg-black/90 px-2 rounded-2xl top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-white z-10">
         <p class="text-center text-[12px]">Deploy</p>
         <p class="text-[12px]">not available</p>
       </div>
@@ -74,3 +74,19 @@ import { currentHoliday } from "../../data/CurrentHoliday";
     />
   </main>
 </article>
+
+<script>
+  const cards = document.querySelectorAll(".card-achievement");
+
+  cards.forEach((card) => {
+    const deploy = card.querySelector(".deploy-container");
+
+    card.addEventListener("mouseenter", () => {
+      deploy.style.opacity = "100";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      deploy.style.opacity = "0";
+    });
+  });
+</script>
