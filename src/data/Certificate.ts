@@ -4,7 +4,7 @@ export const certificate = [
         linkDeploy:"/img/Curso_redes_de_informacion.pdf",
         img:"https://portafolio-david-hl.netlify.app/img/Curso_redes_de_informacion.png",
         deploy:true,
-        date:"June 2025",
+        date:"May 2025",
         type:"certificate"
 
     },
@@ -13,7 +13,7 @@ export const certificate = [
         linkDeploy:"https://portafolio-david-hl.netlify.app/img/Curso_redes_packet_tracer.pdf",
         img:"/img/Curso_redes_packet_tracer.png",
         deploy:true,
-        date:"June 2025",
+        date:"April 2025",
         type:"certificate"
 
     },
@@ -22,7 +22,7 @@ export const certificate = [
         linkDeploy:"https://portafolio-david-hl.netlify.app/img/Curso_java.pdf",
         img:"/img/Curso_java.png",
         deploy:true,
-        date:"June 2025",
+        date:"September 2025",
         type:"certificate"
 
     },
@@ -31,7 +31,7 @@ export const certificate = [
         linkDeploy:"https://portafolio-david-hl.netlify.app/img/hackathon.pdf",
         img:"/img/hackathon.png",
         deploy:true,
-        date:"June 2025",
+        date:"February 2025",
         type:"certificate"
 
     }
