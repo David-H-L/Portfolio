@@ -6,7 +6,7 @@ type Command = {
 }
 
 export function Bash() {
-    const [command, setCommand ] = useState<Command[]>([]);
+    const [command, setCommand ] = useState<Command[]>([{text:'sudo growing every day',found:true},{text:'sudo davidhuancaledezma@gmail.com',found:true}]);
     const containerRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -55,7 +55,7 @@ export function Bash() {
                             <span className="text-white">$</span>
                         </>
                     )}
-                    <p className="text-white text-[14px] font-normal">{item.text}</p>
+                    <p className="text-white text-[14px] font-light">{item.text}</p>
                 </div>
                 ))
                 
@@ -66,7 +66,7 @@ export function Bash() {
                 <span className="text-white">:</span>
                 <span className="text-blue-500">~</span>
                 <span className="text-white">$</span>
-                <input type="text" ref={inputRef} onKeyDown={addCommand} className="flex-1 outline-none font-normal text-white text-[14px]" />
+                <input type="text" ref={inputRef} onKeyDown={addCommand} className="flex-1 outline-none font-light text-white text-[14px]" />
             </div>
         </div>
     )

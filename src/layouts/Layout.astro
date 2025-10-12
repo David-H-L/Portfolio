@@ -7,6 +7,8 @@ import Technologies from "../components/Technologies.astro";
 import Konsole from "../components/Konsole.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import Christmas from "../components/Holiday/Christmas.astro";
+import Halloween from "../components/Holiday/Halloween.astro";
 ---
 
 <!doctype html>
@@ -19,12 +21,13 @@ import "../styles/global.css";
     <title>Astro Basics</title>
   </head>
   <body
-    class="absolute top-0 z-[-2] h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+    class="absolute top-0 z-[-2] h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] font-light"
   >
+    <Christmas />
+
     <div class="mb-10">
       <Header />
     </div>
-
     <div class="mb-10 md:flex md:justify-end">
       <div class="bg-sky-500/10 rounded-2xl m-2 p-2 md:m-8 md:w-[75vw] sm:p-3">
         <h2 class="text-white font-bold pb-3 text-[20px] md:text-[23px]">
@@ -46,19 +49,23 @@ import "../styles/global.css";
     <SideBar />
 
     <div class="mb-10">
-      <h2 class="text-white font-bold text-[20px] mx-2 md:mx-8 md:text-[23px]">
+      <h2
+        class="text-white text-center font-bold text-[25px] mx-2 md:mx-8 md:text-[28px]"
+      >
         My technologies and tools <span><i class="fa-solid fa-wrench"></i></span
         >
       </h2>
       <Technologies />
     </div>
 
-    <div class="">
-      <Konsole />
+    <div class="sm:flex sm:justify-center">
+      <div><Konsole /></div>
     </div>
 
     <Footer />
-
+    <section class="fixed top-0 w-[100vw] h-[100vw] -z-10">
+      <Halloween />
+    </section>
     <slot />
   </body>
 </html>
