@@ -9,6 +9,9 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import Christmas from "../components/Holiday/Christmas.astro";
 import Halloween from "../components/Holiday/Halloween.astro";
+import { currentHoliday } from "../components/data/CurrentHoliday";
+import { cardColor } from "../components/data/CardColor";
+console.log(currentHoliday());
 ---
 
 <!doctype html>
@@ -23,13 +26,13 @@ import Halloween from "../components/Holiday/Halloween.astro";
   <body
     class="absolute top-0 z-[-2] h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] font-light"
   >
-    <Christmas />
+    {currentHoliday() === "diciembre" && <Christmas />}
 
     <div class="mb-10">
       <Header />
     </div>
     <div class="mb-10 md:flex md:justify-end">
-      <div class="bg-sky-500/10 rounded-2xl m-2 p-2 md:m-8 md:w-[75vw] sm:p-3">
+      <div class=`${cardColor()} rounded-2xl m-2 p-2 md:m-8 md:w-[75vw] sm:p-3`>
         <h2 class="text-white font-bold pb-3 text-[20px] md:text-[23px]">
           Projects <span><i class="fas fa-star"></i></span>
         </h2>
@@ -38,7 +41,7 @@ import Halloween from "../components/Holiday/Halloween.astro";
     </div>
 
     <div
-      class="bg-sky-500/10 rounded-2xl m-2 mb-10 p-2 md:m-8 md:w-[75vw] sm:p-3"
+      class=`${cardColor()} rounded-2xl m-2 mb-10 p-2 md:m-8 md:w-[75vw] sm:p-3`
     >
       <h2 class="text-white font-bold pb-3 text-[20px] md:text-[23px]">
         Certificates <span><i class="fa-solid fa-certificate"></i> </span>
@@ -63,9 +66,15 @@ import Halloween from "../components/Holiday/Halloween.astro";
     </div>
 
     <Footer />
-    <section class="fixed top-0 w-[100vw] h-[100vw] -z-10">
-      <Halloween />
-    </section>
+
+    {
+      currentHoliday() === "octubre" && (
+        <section class="fixed top-0 w-[100vw] h-[100vw] -z-10">
+          <Halloween />
+        </section>
+      )
+    }
+
     <slot />
   </body>
 </html>

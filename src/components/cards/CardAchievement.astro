@@ -10,6 +10,7 @@ interface Project {
 }
 const { name, linkGithub, linkDeploy, img, deploy, date, type } =
   Astro.props as Project;
+import { currentHoliday } from "../data/CurrentHoliday";
 ---
 
 <article
@@ -23,9 +24,13 @@ const { name, linkGithub, linkDeploy, img, deploy, date, type } =
     {date}
   </header>
 
-  <div class="absolute -top-1 h-10 w-10 z-10">
-    <img src="/img/fantasma.png" alt="" />
-  </div>
+  {
+    currentHoliday() === "octubre" && (
+      <div class="absolute -top-1 h-10 w-10 z-10">
+        <img src="/img/fantasma.png" alt="" />
+      </div>
+    )
+  }
 
   {
     !deploy && (
