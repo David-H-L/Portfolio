@@ -1,16 +1,17 @@
 ---
-import Header from "../components/Header.astro";
-import Project from "../components/Project.astro";
-import Certificate from "../components/Certificate.astro";
-import SideBar from "../components/SideBar.astro";
-import Technologies from "../components/Technologies.astro";
-import Konsole from "../components/Konsole.astro";
-import Footer from "../components/Footer.astro";
+import {
+  Header,
+  Project,
+  Certificate,
+  SideBar,
+  Technologies,
+  Konsole,
+  Footer,
+  Christmas,
+  Halloween,
+} from "../components";
+import { currentHoliday, cardColor } from "../data";
 import "../styles/global.css";
-import Christmas from "../components/Holiday/Christmas.astro";
-import Halloween from "../components/Holiday/Halloween.astro";
-import { currentHoliday } from "../data/CurrentHoliday";
-import { cardColor } from "../data/CardColor";
 ---
 
 <!doctype html>
@@ -53,7 +54,7 @@ import { cardColor } from "../data/CardColor";
 
     <div class="mb-10">
       <h2
-        class="text-white text-center font-bold text-[25px] mx-2 md:mx-8 md:text-[28px]"
+        class="text-white text-center font-bold text-[20px] mx-2 md:mx-8 md:text-[28px]"
       >
         My technologies and tools <span><i class="fa-solid fa-wrench"></i></span
         >

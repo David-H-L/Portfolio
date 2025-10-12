@@ -10,7 +10,7 @@ interface Project {
 }
 const { name, linkGithub, linkDeploy, img, deploy, date, type } =
   Astro.props as Project;
-import { currentHoliday } from "../../data/CurrentHoliday";
+import { currentHoliday } from "../../data";
 ---
 
 <article

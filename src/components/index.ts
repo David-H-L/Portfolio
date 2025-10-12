@@ -1,0 +1,9 @@
+export { default as Certificate } from './Certificate.astro';
+export { default as Footer } from './Footer.astro';
+export { default as Header } from './Header.astro';
+export { default as Konsole } from './Konsole.astro';
+export { default as Project } from './Project.astro';
+export { default as SideBar } from './SideBar.astro';
+export { default as Technologies } from './Technologies.astro';
+export { default as Christmas } from './Holiday/Christmas.astro';
+export { default as Halloween } from './Holiday/Halloween.astro';
