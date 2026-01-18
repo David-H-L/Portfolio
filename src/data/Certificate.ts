@@ -34,5 +34,14 @@ export const certificate = [
         date:"February 2025",
         type:"certificate"
 
+    },
+    {
+        name:"Web development",
+        linkDeploy:"https://portafolio-david-hl.netlify.app/img/Web_certificate.pdf",
+        img:"/img/Curso_web.jpeg",
+        deploy:true,
+        date:"October 2025",
+        type:"certificate"
+
     }
 ]
