@@ -35,5 +35,14 @@ export const projects = [
         deploy: false,
         date:"March 2025",
         type:"project"
+    },
+    {
+        name:"Project-based assessment",
+        linkGithub:"https://github.com/doggy64/Taller-de-Ingenieria-de-Software",
+        linkDeploy:"",
+        img:"/img/tis.png",
+        deploy: false,
+        date:"August 2024",
+        type:"project"
     }
 ]
